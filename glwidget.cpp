@@ -4,7 +4,11 @@
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent)
 {
-
+    this->R = 1;
+    this->wired = false;
+    this->ang = 0.5;
+    connect(&Timer, SIGNAL(timeout()), this, SLOT(update()));
+    Timer.start(16);
 }
 
 GLWidget::~GLWidget()
@@ -29,8 +33,21 @@ void GLWidget::paintGL()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(0,0,5, 0,0,0, 0,1,0);
+
+    ang += 0.5;
+    glTranslatef(x,y,z);
+    glRotatef(ang,1,1,1);
+
+
     glColor3f(1,0,0);
-    glutSolidSphere(1,20,20);
+    if(wired)
+    {
+        glutWireSphere(R,20,20);
+    }
+    else
+    {
+        glutSolidSphere(R,20,20);
+    }
 }
 
 void GLWidget::resizeGL(int w, int h)

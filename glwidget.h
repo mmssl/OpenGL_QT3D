@@ -5,6 +5,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <GL/glut.h>
+#include <QTimer>
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -12,10 +13,19 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 public:
     GLWidget(QWidget *parent = nullptr);
     ~GLWidget();
+    int R;
+    float x,y,z;
+    bool wired;
+    float ang;
 protected:
     void initializeGL();
     void paintGL();
     void resizeGL(int w, int h);
+
+
+private:
+    QTimer Timer;
+
 };
 
 #endif // GLWIDGET_H
