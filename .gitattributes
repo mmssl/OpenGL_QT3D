@@ -5,3 +5,6 @@
 *.s linguist-detectable=false
 *.cmake linguist-detectable=false
 *.txt linguist-detectable=false
+*.pro linguist-detectable=false
+*.user.pro linguist-detectable=false
+ 
