@@ -8,4 +8,6 @@
 *.pro linguist-detectable=false
 *.user.pro linguist-detectable=false
 *.o linguist-detectable=false
+*Makefile linguist-detectable=false
+ 
  
