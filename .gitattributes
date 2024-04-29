@@ -7,4 +7,5 @@
 *.txt linguist-detectable=false
 *.pro linguist-detectable=false
 *.user.pro linguist-detectable=false
+*.o linguist-detectable=false
  

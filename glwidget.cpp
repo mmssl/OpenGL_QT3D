@@ -38,7 +38,6 @@ void GLWidget::paintGL()
     glTranslatef(x,y,z);
     glRotatef(ang,1,1,1);
 
-
     glColor3f(1,0,0);
     if(wired)
     {
